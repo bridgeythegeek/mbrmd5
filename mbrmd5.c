@@ -109,7 +109,7 @@ void dumpMBR(char *drive, BOOL reportNoDrive)
 
 		char outFile[37];
 		memcpy(outFile, md5, sizeof(md5));
-		memcpy(outFile + (sizeof(wchar_t) * 16), ".bin", sizeof(wchar_t) * 5);
+		memcpy(outFile + 32, ".bin\0", 5);
 
 		FILE *hOutFile = fopen(outFile, "wb");
 		if(!hOutFile)
